@@ -1,6 +1,11 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+	No new features
+
+	Bug fixes:
+	* on_listen_error is now required in the ->listen call, ensure we
+	handle this by failing the ->listening Future
 
 0.004     2013-10-22 00:13:54 Europe/London
 	No new features
