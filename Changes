@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+0.005     2014-08-04 21:17:30+01:00 Europe/London
 	No new features
 
 	Bug fixes:
