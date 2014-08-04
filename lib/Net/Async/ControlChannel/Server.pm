@@ -1,4 +1,5 @@
 package Net::Async::ControlChannel::Server;
+
 use strict;
 use warnings;
 use parent qw(Mixin::Event::Dispatch);
