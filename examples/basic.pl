@@ -29,7 +29,7 @@ $server->subscribe_to_event(
 );
 {
 	$loop->add(my $timer = IO::Async::Timer::Periodic->new(
-		interval => 5,
+		interval => 1,
 		on_tick => sub {
 			$server->dispatch('timer.tick' => time)
 		}
