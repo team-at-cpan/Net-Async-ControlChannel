@@ -170,6 +170,7 @@ sub start {
 			port     => $self->port || 0,
 		},
 		on_listen => $self->curry::listen_active,
+		on_listen_error => $self->curry::listen_error,
 		on_stream => $self->curry::incoming_stream,
 	);
 	$self->listening;
@@ -196,6 +197,17 @@ sub listen_active {
 	$self->{host} = $sock->sockhost;
 	$self->{port} = $sock->sockport;
 	$self->listening->done($self);
+}
+
+=head2 listen_error
+
+Called when there's an error. Marks L</listening> as failed.
+
+=cut
+
+sub listen_error {
+	my $self = shift;
+	$self->listening->fail(@_);
 }
 
 =head2 incoming_stream
